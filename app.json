@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "CoupleApp",
-    "slug": "CoupleApp",
+    "name": "小堡",
+    "slug": "xiaobu",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -23,7 +23,14 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "name": "小堡",
+      "shortName": "小堡",
+      "description": "你們的專屬空間",
+      "themeColor": "#FF6B9D",
+      "backgroundColor": "#FFF5F7",
+      "display": "standalone",
+      "serviceWorkerPath": "/sw.js"
     },
     "plugins": [
       "expo-router",

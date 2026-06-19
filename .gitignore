@@ -33,6 +33,10 @@ yarn-error.*
 # local env files
 .env*.local
 
+# 金鑰設定檔（含 Firebase / Cloudinary 設定，不上傳；改用 *.example.ts 範本）
+services/firebase.ts
+services/cloudinaryService.ts
+
 # typescript
 *.tsbuildinfo
 
@@ -41,3 +45,5 @@ app-example
 # generated native folders
 /ios
 /android
+
+.vercel
