@@ -235,5 +235,26 @@ npm run dev
 
 *祝你們的小堡順利建成！💕*
 
-cd CoupleApp
+---
+
+## 日常更新與部署
+
+Vercel 已經連好 GitHub，所以 **`git push` 上去就會自動部署**。改完程式後，在 `CoupleApp` 資料夾執行：
+
+```bash
+# 1. 本機預覽（開發時邊改邊看）
 npm run dev
+
+# 2. 型別檢查（推上去前確認沒改壞）
+npx tsc --noEmit
+
+# 3. 推上 GitHub → Vercel 自動部署
+git add -A
+git commit -m "更新說明（簡述這次改了什麼）"
+git push
+```
+
+**注意事項**
+- 網址永遠不變，手機上加到主畫面的 PWA 會自動更新內容，不用重新下載。
+- 新增圖鑑 3D 模型：把 `.glb` 放進 `public/models/`，在 `services/collectionService.ts` 的 `COLLECTIBLES` 加一筆設好 `model` 路徑，再 `git push`。
+- `services/firebase.ts`、`services/cloudinaryService.ts` 含金鑰、已設為不上傳 GitHub（本機保留、照常部署）。

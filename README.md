@@ -5,7 +5,7 @@
 <!-- 建議放一張首頁 / 圖鑑 / 棋盤的截圖或 GIF -->
 <!-- ![demo](docs/demo.gif) -->
 
-**🔗 Live Demo：** `<你的 Vercel 網址>`（手機開啟可「加入主畫面」全螢幕使用）
+**🔗 Live Demo：** `https://couple-app-kappa.vercel.app/`（手機開啟可「加入主畫面」全螢幕使用）
 
 ---
 
@@ -81,7 +81,7 @@ vercel --prod      # 部署上線
 
 ## ⚙️ 設定與部署
 
-詳見 [SETUP_GUIDE.md](./SETUP_GUIDE.md)
+需要自己的 Firebase 與 Cloudinary 專案，參考 `services/*.example.ts` 範本填入金鑰，再依「🚀 快速開始」安裝執行；部署使用 Vercel 靜態輸出。
 
 ---
 

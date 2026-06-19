@@ -37,6 +37,9 @@ yarn-error.*
 services/firebase.ts
 services/cloudinaryService.ts
 
+# 個人設定筆記（給自己看，不上傳）
+SETUP_GUIDE.md
+
 # typescript
 *.tsbuildinfo
 
