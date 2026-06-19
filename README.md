@@ -62,14 +62,14 @@ git clone <你的 repo 網址>
 cd CoupleApp
 npm install
 
-# 複製設定範本並填入自己的金鑰
-cp services/firebase.example.ts services/firebase.ts
-cp services/cloudinaryService.example.ts services/cloudinaryService.ts
+# 複製環境變數範本並填入自己的 Firebase / Cloudinary 金鑰
+cp .env.example .env.local
 
 npm run dev        # 本機預覽
 npx tsc --noEmit   # 型別檢查
-vercel --prod      # 部署上線
 ```
+
+> 部署到 Vercel 時，於專案的 **Settings → Environment Variables** 設定 `.env.example` 裡那幾個 `EXPO_PUBLIC_*` 變數。
 
 ---
 
@@ -81,7 +81,7 @@ vercel --prod      # 部署上線
 
 ## ⚙️ 設定與部署
 
-需要自己的 Firebase 與 Cloudinary 專案，參考 `services/*.example.ts` 範本填入金鑰，再依「🚀 快速開始」安裝執行；部署使用 Vercel 靜態輸出。
+需要自己的 Firebase 與 Cloudinary 專案。金鑰透過環境變數注入：本機放 `.env.local`、線上放 Vercel 的 Environment Variables（變數清單見 `.env.example`）。部署使用 Vercel 靜態輸出。
 
 ---
 

@@ -33,10 +33,6 @@ yarn-error.*
 # local env files
 .env*.local
 
-# 金鑰設定檔（含 Firebase / Cloudinary 設定，不上傳；改用 *.example.ts 範本）
-services/firebase.ts
-services/cloudinaryService.ts
-
 # 個人設定筆記（給自己看，不上傳）
 SETUP_GUIDE.md
 

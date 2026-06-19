@@ -1,10 +1,8 @@
 import { Platform } from 'react-native';
 
-// 複製這個檔案為 cloudinaryService.ts，並填入你自己的 Cloudinary 設定
-// CLOUD_NAME：Cloudinary Dashboard 上的 Cloud name
-// UPLOAD_PRESET：建立一個 unsigned upload preset 後填入名稱
-const CLOUD_NAME = 'YOUR_CLOUD_NAME';
-const UPLOAD_PRESET = 'YOUR_UNSIGNED_PRESET';
+// 從環境變數讀（本機 .env.local，線上 Vercel Environment Variables）
+const CLOUD_NAME = process.env.EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME;
+const UPLOAD_PRESET = process.env.EXPO_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
 
 export async function uploadImage(uri: string): Promise<string> {
   const formData = new FormData();
@@ -19,7 +17,7 @@ export async function uploadImage(uri: string): Promise<string> {
     formData.append('file', { uri, type: 'image/jpeg', name: 'upload.jpg' } as any);
   }
 
-  formData.append('upload_preset', UPLOAD_PRESET);
+  formData.append('upload_preset', UPLOAD_PRESET ?? '');
 
   const res = await fetch(
     `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
