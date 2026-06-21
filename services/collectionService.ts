@@ -39,7 +39,9 @@ export const COLLECTIBLES: CollectibleItem[] = [
 ];
 
 // 測試用：把這些 id 強制當成「已收集」，方便看完成後的 3D 效果。測完清空成 [] 即可。
-export const TEST_COLLECTED_IDS: string[] = [];
+export const TEST_COLLECTED_IDS: string[] = [
+  'rilakkuma', 'rilakkuma2', 'rilakkuma3', 'rilakkuma4', 'f1-car-1', 'f1-car-2',
+];
 
 export interface CollectedEntry {
   weekId: string;
