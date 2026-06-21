@@ -120,12 +120,31 @@ export default function RootLayout() {
       <AuthProvider>
         <CoupleProvider>
           <PoopNotificationProvider />
-          <View style={{ flex: 1 }}>
-            <InstallBanner />
-            <RootLayoutNav />
+          {/* 電腦版：置中手機框；手機版：直接全版面 */}
+          <View style={Platform.OS === 'web' ? desktopOuter : { flex: 1 }}>
+            <View style={Platform.OS === 'web' ? desktopInner : { flex: 1 }}>
+              <InstallBanner />
+              <RootLayoutNav />
+            </View>
           </View>
         </CoupleProvider>
       </AuthProvider>
     </GestureHandlerRootView>
   );
 }
+
+const desktopOuter: any = {
+  flex: 1,
+  backgroundColor: '#E8D4DA',
+  alignItems: 'center',
+  justifyContent: 'stretch',
+};
+
+const desktopInner: any = {
+  flex: 1,
+  width: '100%',
+  maxWidth: 430,
+  backgroundColor: '#fff',
+  boxShadow: '0 0 48px rgba(0,0,0,0.18)',
+  overflow: 'hidden',
+};
